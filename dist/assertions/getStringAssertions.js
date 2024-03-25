@@ -1,5 +1,8 @@
-import { frameworkSymbol } from '../constants.js';
-export function getStringAssertions(input, report, label) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getStringAssertions = void 0;
+const constants_js_1 = require("../constants.js");
+function getStringAssertions(input, report, label) {
     return {
         typed: input,
         equalTo: (value) => {
@@ -8,7 +11,7 @@ export function getStringAssertions(input, report, label) {
                 report(message);
                 return;
             }
-            throw { id: frameworkSymbol, message: `Failed assertion: ${message}` };
+            throw { id: constants_js_1.frameworkSymbol, message: `Failed assertion: ${message}` };
         },
         matches: (value) => {
             const message = `${label}: ${input} matches ${value.toString()}`;
@@ -16,8 +19,9 @@ export function getStringAssertions(input, report, label) {
                 report(message);
                 return;
             }
-            throw { id: frameworkSymbol, message: `Failed assertion: ${message}` };
+            throw { id: constants_js_1.frameworkSymbol, message: `Failed assertion: ${message}` };
         },
     };
 }
+exports.getStringAssertions = getStringAssertions;
 //# sourceMappingURL=getStringAssertions.js.map

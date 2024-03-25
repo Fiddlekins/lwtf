@@ -1,5 +1,8 @@
-import { getIt } from './getIt.js';
-export function getDescribe(testSuite, testCategoryReport) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getDescribe = void 0;
+const getIt_js_1 = require("./getIt.js");
+function getDescribe(testSuite, testCategoryReport) {
     return function describe(testCategoryName, testRegistrar) {
         let finish = () => { };
         const testCategory = {
@@ -25,10 +28,11 @@ export function getDescribe(testSuite, testCategoryReport) {
             testCategoryReport();
             finish();
         };
-        const it = getIt(testCategory, testReport);
+        const it = (0, getIt_js_1.getIt)(testCategory, testReport);
         testRegistrar({
             it,
         });
     };
 }
+exports.getDescribe = getDescribe;
 //# sourceMappingURL=getDescribe.js.map

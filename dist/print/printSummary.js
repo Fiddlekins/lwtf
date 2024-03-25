@@ -1,6 +1,9 @@
-import { getIndent } from './getIndent.js';
-import { getResult } from './getResult.js';
-export function printSummary(testSuite) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.printSummary = void 0;
+const getIndent_js_1 = require("./getIndent.js");
+const getResult_js_1 = require("./getResult.js");
+function printSummary(testSuite) {
     console.log('');
     console.log('Summary:');
     if (testSuite.result === 'failure') {
@@ -16,7 +19,7 @@ export function printSummary(testSuite) {
         for (const test of testCategory.tests) {
             totalTests++;
             if (test.result === 'failure') {
-                console.log(`${getIndent(1)}${getResult(test.result)}${test.testName}`);
+                console.log(`${(0, getIndent_js_1.getIndent)(1)}${(0, getResult_js_1.getResult)(test.result)}${test.testName}`);
             }
             else {
                 successfulTests++;
@@ -28,4 +31,5 @@ export function printSummary(testSuite) {
     }
     console.log(`There are ${successfulTests}/${totalTests} tests passing`);
 }
+exports.printSummary = printSummary;
 //# sourceMappingURL=printSummary.js.map
