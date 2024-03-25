@@ -1,5 +1,7 @@
 import { Assertions } from './assertions/types.ts';
 
+export * from './assertions/types.ts';
+
 export interface FrameworkError {
   id: symbol;
   message: string;

@@ -1,4 +1,5 @@
 import { Assertions } from './assertions/types.js';
+export * from './assertions/types.js';
 export interface FrameworkError {
     id: symbol;
     message: string;
