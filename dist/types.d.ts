@@ -1,30 +1,10 @@
+import { Assertions } from './assertions/types.js';
 export interface FrameworkError {
     id: symbol;
     message: string;
 }
-export type AssertionReport = (message: string) => void;
 export type TestReport = () => void;
 export type TestCategoryReport = () => void;
-export interface NumberAssertions {
-    typed: number;
-    equalTo: (value: number) => void;
-    greaterThan: (value: number) => void;
-    greaterThanOrEqual: (value: number) => void;
-    lessThan: (value: number) => void;
-    lessThanOrEqual: (value: number) => void;
-}
-export interface StringAssertions {
-    typed: string;
-    equalTo: (value: string) => void;
-}
-export interface ArrayAssertions {
-    typed: unknown[];
-}
-export interface Assertions {
-    number: (value: unknown) => NumberAssertions;
-    string: (value: unknown) => StringAssertions;
-    array: (value: unknown) => ArrayAssertions;
-}
 export interface TestContext {
     assert: (label: string) => Assertions;
 }

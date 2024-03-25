@@ -1,4 +1,4 @@
-import { ArrayAssertions, AssertionReport } from '../types.ts';
+import { ArrayAssertions, AssertionReport } from './types.ts';
 
 export function getArrayAssertions<Type>(
   input: Type[],

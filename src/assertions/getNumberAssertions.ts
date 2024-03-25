@@ -1,5 +1,5 @@
 import { frameworkSymbol } from '../constants.ts';
-import { AssertionReport, NumberAssertions } from '../types.ts';
+import { AssertionReport, NumberAssertions } from './types.ts';
 
 export function getNumberAssertions(
   input: number,

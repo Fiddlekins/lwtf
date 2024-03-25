@@ -29,7 +29,9 @@ describe('Test Category Name', ({ it }) => {
     assert('Response status').number(res.status).equalTo(200);
     const json = await res.json();
     const jsonArray = assert('Response data is array').array(json).typed;
-    assert('Response array has one element').number(jsonArray.length).equalTo(1);
+    assert('Response array has one element')
+      .number(jsonArray.length)
+      .equalTo(1);
     assert('Element is non-zero').number(jsonArray[0]).greaterThan(0);
   });
 });

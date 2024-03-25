@@ -10,6 +10,14 @@ export function getStringAssertions(input, report, label) {
             }
             throw { id: frameworkSymbol, message: `Failed assertion: ${message}` };
         },
+        matches: (value) => {
+            const message = `${label}: ${input} matches ${value.toString()}`;
+            if (value.test(input)) {
+                report(message);
+                return;
+            }
+            throw { id: frameworkSymbol, message: `Failed assertion: ${message}` };
+        },
     };
 }
 //# sourceMappingURL=getStringAssertions.js.map
